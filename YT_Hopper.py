@@ -4,7 +4,7 @@ import os
 def path():
     # change path according to your desktop path
     # dont forget for every '\' add a second one :)
-    path = "D:\\Users\\User\\Desktop"
+    path = "D:\\Users\\User\\Desktop\\"
     # remove comment to force downloading to a folder instead of desktop
     #path += "\\Songs"; os.mkdir(path)
     return path
@@ -36,6 +36,7 @@ def download_song(link, save_path):
             audiofiles = yt.streams.filter(only_audio=True)
             # downloading the audio (to desktop path)
             audiofiles[0].download(save_path)
+            return 1
     except Exception as e: 
             print(e) # debug
             return None
@@ -67,6 +68,7 @@ type 'quit' at menu choice to quit
 
 
 if (__name__ == "__main__"):
-    menu()
+    #menu()
+    links_loop(path())
 
 print('Script completed...') 
